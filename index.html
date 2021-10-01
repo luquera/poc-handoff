@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>POC Handoff</title>
-</head>
-<body></body>
-<script>
-  window.location.replace("https://appxpi.onelink.me/rOvN?creative_id=8127cd9a-8e05-41f6-88b3-32c7c0bc7d4a&af_dp=appxpinvestimentos://finance");
-</script>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POC Handoff</title>
+  </head>
+
+  <body>
+    <h1>Você será redirecionado para o app em 3 segundos</h1>
+    <p id="install-app">
+      Caso não tenha o app instalado, clique <button onclick="openStore()">AQUI</button>
+    </p>
+  </body>
+  <script>
+    function openStore() {
+    	const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.replace("https://apps.apple.com/br/app/xp-investimentos/id1300713021");
+      }
+      window.location.replace("https://play.google.com/store/apps/details?id=br.com.xp.carteira&hl=pt_BR&gl=US");
+    }
+
+    setTimeout(() => {
+      window.location.replace("appxpinvestimentos://finance");
+    }, 3000)
+
+  </script>
+
 </html>
